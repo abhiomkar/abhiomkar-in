@@ -1,5 +1,7 @@
+{% import 'base/icon.html' as icon %}
+
 <!doctype html>
-<html>
+<html class="wf-loading">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -12,21 +14,40 @@
 
 <body>
 
-<section id="main-container">
-    <header id="header">
-      <h1 class="main-title">Ao</h1>
-      <div class="header-nav">
-
-      </div>
+<section class="main-container">
+    <header class="main-header">
+      <h1 class="main-title">Ao.</h1>
+        <ul class="main-header-nav">
+          <li><a class="nav-item active" href="/">Home</a></li>
+          <li>
+            <a class="nav-item" href="/projects">
+              Projects
+            </a>
+          </li>
+          <li>
+            <a class="nav-item" href="/photography">
+              Photography
+            </a>
+          </li>
+          <li>
+            <a class="nav-item" href="/contact">
+              Contact
+            </a>
+          </li>
+          <li>
+            <a class="nav-item nav-item-more" href="#">
+              {{ icon.render('moreVert') }}
+            </a>
+          </li>
+        </ul>
     </header>
     <section id="content">
         {% block content %}{% endblock %}
     </section>
-    <footer>
-        Made by <a href="http://abhiomkar.in">Abhinay Omkar</a>
-    </footer>
 </section>
 
-<!-- <script src="../../public/main.js"></script> -->
+<script src="https://use.typekit.net/poo6aga.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
 </body>
 </html>

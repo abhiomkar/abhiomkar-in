@@ -1,23 +1,26 @@
-/* Reset */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  margin: 0;
-  padding: 0;
+@import "./reset.css";
+@import "./color.css";
+@import "./media.css";
+@import "./header.css";
+
+/* Base */
+html, body {
+  height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  text-rendering: optimizeLegibility;
+  color: #666;
+  line-height: 1;
+
+  font-family: "myriad-pro","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-header {
-  margin-top: 40px;
 }
 
 blockquote, q {
@@ -26,6 +29,11 @@ blockquote, q {
 
 blockquote:before, blockquote:after, q:before, q:after {
   content: none;
+}
+
+li {
+  list-style-type: none;
+  display: inline-block;
 }
 
 table {
@@ -55,16 +63,9 @@ table {
   margin-bottom: 20px;
 }
 
-/* Base */
-html, body {
-  height: 100%;
-}
-
-body {
-  font-family: "Myriad Set Pro","Helvetica Neue","Helvetica","Arial",sans-serif;
-  color: #666;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+/* Responsive Grid */
+.grid-sm-col {
+  /*width: 24%;*/
 }
 
 /* Typography */
@@ -105,8 +106,8 @@ li {
 }
 
 /* Line Height */
-#post-body, p {
-  line-height: 1.7;
+p {
+  line-height: 2;
 }
 
 b, strong {
@@ -219,31 +220,9 @@ pre, code {
   line-height: 20px;
 }
 
-#main-container {
+.main-container {
     max-width: 800px;
     margin: auto;
-}
-
-.main-title {
-  display: inline-block;
-  line-height: 100%;
-  font-weight: 500;
-  font-size: 30px;
-  margin: 0;
-  padding-bottom: 10px;
-  letter-spacing: -1px;
-  font-weight: 500;
-  color: #616161;
-  text-align: center;
-  width: 100%;
-  display: block;
-}
-
-.main-description {
-  text-align: center;
-  color: #aaa;
-  width: 100%;
-  display: block;
 }
 
 footer {
@@ -254,4 +233,16 @@ footer {
   font-weight: 500;
   border-top: 1px solid #eee;
   padding-top: 20px;
+}
+
+.base-icon {
+    fill: var(--blackLight);
+}
+
+.base-icon path {
+  vertical-align: middle;
+}
+
+.wf-loading {
+  visibility: hidden;
 }

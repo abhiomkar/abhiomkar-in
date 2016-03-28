@@ -1,0 +1,17 @@
+:root {
+    --mainColor: #ffbbaaff;
+    --redColor: #c81b1c;
+    --blackLighter: #dfdfdf;
+    --blackMediumDark: #333333;
+    --blackLight: #6c6b6b;
+    --textColor: #4d4d4d;
+    --alertRed: #dd4b39;
+    --orangeColor: #F38630;
+    --black: rgba(51, 51, 51, 1);
+    --blackAlpha50: rgba(51, 51, 51, 0.5);
+    --blackAlpha30: rgba(51, 51, 51, 0.3);
+    --blackAlpha70: rgba(51, 51, 51, 0.7);
+    --blackAlpha80: rgba(51, 51, 51, 0.8);
+    --blackAlpha90: rgba(51, 51, 51, 0.9);
+    --anchorLinkColor: rgb(86, 148, 241);
+}

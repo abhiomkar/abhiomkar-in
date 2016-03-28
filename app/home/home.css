@@ -1,5 +1,22 @@
 .home-container {
-    text-align: center;
-    padding-top: 20px;
-    font-weight: 300;
+  font-size: 16px;
+  color: var(--blackAlpha70);
+  padding-bottom: 15px;
+
+  .cover-pic {
+    width: 100%;
+    display: block;
+    max-width: 550px;
+    margin: 0 auto 15px;
+  }
+
+  .content {
+    padding: 0 12px;
+    max-width: 576px;
+    margin: 0 auto;
+  }
+
+  @media screen and (--Phone) {
+
+  }
 }

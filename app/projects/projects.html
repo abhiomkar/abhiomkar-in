@@ -1,0 +1,11 @@
+{% extends "base/base.html" %}
+{% block title %}{{ super() }}Projects{% endblock %}
+{% block content %}
+    <div class="{{ name }}-container">
+      {% for repo in repoList %}
+        <div class="item">
+          
+        </div>
+      {% endfor %}
+    </div>
+{% endblock %}

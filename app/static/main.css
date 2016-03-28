@@ -7,17 +7,97 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   margin: 0;
   padding: 0;
 }
-
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+.main-header {
+  border-bottom: 1px solid #dfdfdf;
+  margin: 36px 0 0 0;
+  padding-left: 15px;
+  padding-bottom: 15px;
+}
+.main-header .main-title {
+  display: inline-block;
+  line-height: 100%;
+  font-weight: 500;
+  font-size: 50px;
+  margin: 0;
+  letter-spacing: -1px;
+  color: #333333;
+  text-align: center;
+  width: 100%;
   display: block;
+}
+.main-header .main-header-nav {
+  text-align: center;
+  white-space: nowrap;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  max-width: 400px;
+  margin: 22px auto 0;
+}
+.main-header .main-header-nav li {
+  vertical-align: middle;
+}
+.main-header .nav-item {
+  display: block;
+  color: #333333;
+  color: rgba(51, 51, 51, 0.5);
+  text-transform: uppercase;
+  font-size: 11px;
+  vertical-align: middle;
+}
+.main-header .nav-item.active {
+  color: #333333;
+  color: rgba(51, 51, 51, 0.9);
+}
+.main-header .nav-item-more {
+  margin: 0 8px 0 0;
+  height: 20px;
+  width: 24px;
+}
+.main-header .main-description {
+  text-align: center;
+  color: #aaa;
+  width: 100%;
+  display: block;
+}
+@media screen and (min-width: 370px) {
+  .main-header .nav-item {
+    font-size: 13px;
+  }
+}
+@media screen and (min-width: 560px) {
+  .main-header {
+    border-bottom: 0;
+  }
+}
+
+/* Base */
+html, body {
+  height: 100%;
 }
 
 body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  text-rendering: optimizeLegibility;
+  color: #666;
   line-height: 1;
+
+  font-family: "myriad-pro","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
 
-header {
-  margin-top: 40px;
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
 }
 
 blockquote, q {
@@ -26,6 +106,11 @@ blockquote, q {
 
 blockquote:before, blockquote:after, q:before, q:after {
   content: none;
+}
+
+li {
+  list-style-type: none;
+  display: inline-block;
 }
 
 table {
@@ -53,16 +138,9 @@ table {
   margin-bottom: 20px;
 }
 
-/* Base */
-html, body {
-  height: 100%;
-}
-
-body {
-  font-family: "Myriad Set Pro","Helvetica Neue","Helvetica","Arial",sans-serif;
-  color: #666;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+/* Responsive Grid */
+.grid-sm-col {
+  /*width: 24%;*/
 }
 
 /* Typography */
@@ -100,8 +178,8 @@ li {
 }
 
 /* Line Height */
-#post-body, p {
-  line-height: 1.7;
+p {
+  line-height: 2;
 }
 
 b, strong {
@@ -214,31 +292,9 @@ pre, code {
   line-height: 20px;
 }
 
-#main-container {
+.main-container {
     max-width: 800px;
     margin: auto;
-}
-
-.main-title {
-  display: inline-block;
-  line-height: 100%;
-  font-weight: 500;
-  font-size: 30px;
-  margin: 0;
-  padding-bottom: 10px;
-  letter-spacing: -1px;
-  font-weight: 500;
-  color: #616161;
-  text-align: center;
-  width: 100%;
-  display: block;
-}
-
-.main-description {
-  text-align: center;
-  color: #aaa;
-  width: 100%;
-  display: block;
 }
 
 footer {
@@ -250,10 +306,35 @@ footer {
   border-top: 1px solid #eee;
   padding-top: 20px;
 }
-.home-container {
-    text-align: center;
-    padding-top: 20px;
-    font-weight: 300;
+
+.base-icon {
+    fill: #6c6b6b;
 }
+
+.base-icon path {
+  vertical-align: middle;
+}
+
+.wf-loading {
+  visibility: hidden;
+}
+.home-container {
+  font-size: 16px;
+  color: #333333;
+  color: rgba(51, 51, 51, 0.7);
+  padding-bottom: 15px;
+}
+.home-container .cover-pic {
+  width: 100%;
+  display: block;
+  max-width: 550px;
+  margin: 0 auto 15px;
+}
+.home-container .content {
+  padding: 0 12px;
+  max-width: 576px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 370px) {}
 
 /*# sourceMappingURL=main.css.map*/
