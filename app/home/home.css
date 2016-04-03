@@ -1,3 +1,5 @@
+@import "../base/base.css";
+
 .home-container {
   font-size: 16px;
   color: var(--blackAlpha70);
@@ -12,7 +14,7 @@
 
   .content {
     padding: 0 12px;
-    max-width: 576px;
+    max-width: var(--contentWidth);
     margin: 0 auto;
   }
 

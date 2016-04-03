@@ -2,9 +2,27 @@
 {% block title %}{{ super() }}Projects{% endblock %}
 {% block content %}
     <div class="{{ name }}-container">
+      <h1 class="title">Popular Repositories</h1>
       {% for repo in repoList %}
         <div class="item">
-          
+          <div class="item-body">
+            <a href="{{repo.html_url}}" class="item-name">
+              {{repo.name}}
+            </a>
+            <div class="item-description">
+              {{repo.description}}
+            </div>
+          </div>
+          <div class="item-footer">
+            {% if repo.homepage %}
+              <a class="item-action-button" href="{{repo.homepage}}">
+                Go to App
+              </a>
+            {% endif %}
+            <a class="item-action-button" href="{{repo.html_url}}">
+              Source code
+            </a>
+          </div>
         </div>
       {% endfor %}
     </div>

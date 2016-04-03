@@ -1,0 +1,65 @@
+@import "../base/base.css";
+
+.projects-container {
+  max-width: var(--contentWidth);
+  margin: 0 auto;
+
+  .title {
+    font-size: 24px;
+    font-weight: 300;
+  }
+
+  .item {
+    margin: 20px 0;
+    box-shadow: var(--elevation_2dp);
+    border-radius: 2px;
+    transition: all .28s var(--easeInOut);
+  }
+
+  .item:hover {
+    box-shadow: var(--elevation_6dp);
+  }
+
+  .item-body {
+    padding: 25px 25px 0 25px;
+    border-bottom: 1px solid var(--blackAlpha10);
+    cursor: pointer;
+  }
+
+  .item-name {
+    color: var(--blackAlpha80);
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  .item-name:hover {
+    text-decoration: underline;
+  }
+
+  .item-description {
+    color: var(--blackAlpha60);
+    font-size: 14px;
+    line-height: 48px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .item-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 16px 8px 16px 0;
+  }
+
+  .item-action-button {
+    color: var(--blackAlpha50);
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0 10px;
+  }
+
+  .item-action-button:hover {
+    color: var(--blackAlpha80);
+  }
+}

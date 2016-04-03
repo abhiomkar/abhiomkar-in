@@ -19,6 +19,7 @@ def home():
 def projects():
     name = "projects"
     repoList = json.loads(open(settings.APP_PATH + "/projects/repos.json").read())
+    
     return render_template("projects/projects.html", **locals())
 
 # @app.route('/public/<path:path>')

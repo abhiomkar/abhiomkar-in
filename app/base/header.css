@@ -7,7 +7,7 @@
   .main-title {
     display: inline-block;
     line-height: 100%;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 50px;
     margin: 0;
     letter-spacing: -1px;
@@ -59,7 +59,7 @@
   @media screen and (--Phone) {
 
     .nav-item {
-      font-size: 13px;
+      font-size: 14px;
     }
   }
 

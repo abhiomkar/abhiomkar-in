@@ -18,19 +18,23 @@
     <header class="main-header">
       <h1 class="main-title">Ao.</h1>
         <ul class="main-header-nav">
-          <li><a class="nav-item active" href="/">Home</a></li>
           <li>
-            <a class="nav-item" href="/projects">
+            <a class="nav-item {% if name == 'home' %} active{% endif %}" href="/">
+              Home
+            </a>
+          </li>
+          <li>
+            <a class="nav-item {% if name == 'projects' %} active{% endif %}" href="/projects">
               Projects
             </a>
           </li>
           <li>
-            <a class="nav-item" href="/photography">
+            <a class="nav-item {% if name == 'photography' %} active{% endif %}" href="/photography">
               Photography
             </a>
           </li>
           <li>
-            <a class="nav-item" href="/contact">
+            <a class="nav-item {% if name == 'contact' %} active{% endif %}" href="/contact">
               Contact
             </a>
           </li>
