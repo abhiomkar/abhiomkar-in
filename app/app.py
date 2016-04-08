@@ -1,6 +1,8 @@
 import markdown
 import simplejson as json
 
+from operator import itemgetter
+
 from flask import Flask, send_from_directory
 from flask import render_template
 from flask import Markup
@@ -17,9 +19,14 @@ def home():
 
 @app.route("/projects")
 def projects():
+    LIMIT = 5
+
     name = "projects"
-    repoList = json.loads(open(settings.APP_PATH + "/projects/repos.json").read())
-    
+    repo_list = json.loads(open(settings.APP_PATH + "/projects/projects.json").read())
+
+    popular_list = sorted(repo_list, key=itemgetter('stargazers_count'), reverse=True)[:LIMIT]
+    recent_list = sorted(repo_list, key=itemgetter('created_at'), reverse=True)[:LIMIT]
+
     return render_template("projects/projects.html", **locals())
 
 # @app.route('/public/<path:path>')

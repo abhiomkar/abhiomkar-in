@@ -9,9 +9,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 .main-header {
   border-bottom: 1px solid #dfdfdf;
-  margin: 36px 0 0 0;
-  padding-left: 15px;
-  padding-bottom: 15px;
+  margin: 0;
+  padding: 36px 0 15px 15px;
 }
 .main-header .main-title {
   display: inline-block;
@@ -353,9 +352,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 .main-header {
   border-bottom: 1px solid #dfdfdf;
-  margin: 36px 0 0 0;
-  padding-left: 15px;
-  padding-bottom: 15px;
+  margin: 0;
+  padding: 36px 0 15px 15px;
 }
 .main-header .main-title {
   display: inline-block;
@@ -673,6 +671,7 @@ footer {
 .projects-container .title {
   font-size: 24px;
   font-weight: 300;
+  margin-top: 20px;
 }
 
 .projects-container .item {
@@ -683,6 +682,10 @@ footer {
   border-radius: 2px;
   -webkit-transition: all .28s cubic-bezier(0.4, 0.0, 0.2, 1);
   transition: all .28s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.projects-container .category {
+  padding-bottom: 10px;
 }
 
 .projects-container .item:hover {
