@@ -48,7 +48,7 @@
 	
 	__webpack_require__(8);
 	
-	__webpack_require__(11);
+	__webpack_require__(13);
 	
 	console.log('Init');
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
@@ -1256,9 +1256,11 @@
 /* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(console) {"use strict";
+	/* WEBPACK VAR INJECTION */(function(console) {'use strict';
 	
 	__webpack_require__(9);
+	
+	__webpack_require__(11);
 	
 	console.log("Home");
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
@@ -1274,15 +1276,32 @@
 /* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(console) {"use strict";
+	/* WEBPACK VAR INJECTION */(function(console) {'use strict';
 	
 	__webpack_require__(12);
+	
+	console.log('Base');
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ },
+/* 12 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(console) {"use strict";
+	
+	__webpack_require__(14);
 	
 	console.log("Projects");
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ },
-/* 12 */
+/* 14 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

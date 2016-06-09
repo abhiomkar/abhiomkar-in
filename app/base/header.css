@@ -1,50 +1,54 @@
 .main-header {
-  border-bottom: 1px solid var(--blackLighter);
-  margin: 0;
-  padding: 36px 0 15px 15px;
+  background: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px 16px;
+  max-width: 576px;
+  margin: 12px auto 0 auto;
+  height: 92px;
+
+  .header-menu-button {
+    cursor: pointer;
+    margin-right: 4px;
+  }
 
   .main-title {
     display: inline-block;
     line-height: 100%;
-    font-weight: 600;
-    font-size: 50px;
+    font-weight: 500;
+    font-size: 32px;
     margin: 0;
     letter-spacing: -1px;
     color: var(--blackMediumDark);
     text-align: center;
     width: 100%;
     display: block;
+    margin-right: 24px;
   }
 
   .main-header-nav {
-    text-align: center;
     white-space: nowrap;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 400px;
-    margin: 22px auto 0;
-  }
-
-  .main-header-nav li {
-    vertical-align: middle;
+    display: none;
   }
 
   .nav-item {
     display: block;
-    color: var(--blackAlpha50);
-    text-transform: uppercase;
-    font-size: 11px;
+    color: var(--blackAlpha90);
+    font-size: 14px;
+    font-weight: 500;
     vertical-align: middle;
+    margin: 0 14px;
   }
 
   .nav-item.active {
-    color: var(--blackAlpha90);
+    color: var(--blueSelected);
   }
 
   .nav-item-more {
+    color: var(--blackAlpha80);
     margin: 0 8px 0 0;
-    height: 20px;
+    height: 24px;
     width: 24px;
   }
 
@@ -55,14 +59,13 @@
     display: block;
   }
 
-  @media screen and (--Phone) {
-
-    .nav-item {
-      font-size: 14px;
+  @media screen and (--Desktop) {
+    .header-menu-button {
+      display: none;
     }
-  }
 
-  @media screen and (--Phone560) {
-    border-bottom: 0;
+    .main-header-nav {
+      display: block;
+    }
   }
 }

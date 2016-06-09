@@ -17,8 +17,4 @@
     max-width: var(--contentWidth);
     margin: 0 auto;
   }
-
-  @media screen and (--Phone) {
-
-  }
 }

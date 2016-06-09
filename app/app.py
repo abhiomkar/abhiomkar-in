@@ -23,6 +23,7 @@ def projects():
 
     name = "projects"
     repo_list = json.loads(open(settings.APP_PATH + "/projects/projects.json").read())
+    owner_url = repo_list[0]['owner']['html_url']
 
     popular_list = sorted(repo_list, key=itemgetter('stargazers_count'), reverse=True)[:LIMIT]
     recent_list = sorted(repo_list, key=itemgetter('created_at'), reverse=True)[:LIMIT]

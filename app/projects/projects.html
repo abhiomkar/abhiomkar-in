@@ -3,14 +3,18 @@
 {% block content %}
   {% macro project_card(repo) -%}
     <div class="item">
-      <div class="item-body">
-        <a href="{{repo.html_url}}" class="item-name">
+      <a class="item-body" href="{{repo.html_url}}">
+        <div class="item-star-count">
+            {{repo.stargazers_count}}
+            <i class="material-icons star-icon">star_rate</i>
+        </div>
+        <div class="item-name">
           {{repo.name}}
-        </a>
+        </div>
         <div class="item-description">
           {{repo.description}}
         </div>
-      </div>
+      </a>
       <div class="item-footer">
         {% if repo.homepage %}
           <a class="item-action-button" href="{{repo.homepage}}">
@@ -30,6 +34,10 @@
       {% for repo in popular_list %}
         {{ project_card(repo) }}
       {% endfor %}
+
+      <a class="view-all-link" href="{{owner_url}}">
+        View All <i class="material-icons">chevron_right</i>
+      </a>
     </div>
 
     <div class="category">
@@ -37,6 +45,10 @@
       {% for repo in recent_list %}
         {{ project_card(repo) }}
       {% endfor %}
+
+      <a class="view-all-link" href="{{owner_url}}">
+        View All <i class="material-icons">chevron_right</i>
+      </a>
     </div>
   </div>
 {% endblock %}

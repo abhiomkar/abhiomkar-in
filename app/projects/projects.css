@@ -1,8 +1,8 @@
 @import "../base/base.css";
 
 .projects-container {
-  max-width: var(--contentWidth);
   margin: 0 auto;
+  padding-bottom: 50px;
 
   .title {
     font-size: 24px;
@@ -11,7 +11,7 @@
   }
 
   .item {
-    margin: 20px 0;
+    margin: 10px 6px;
     box-shadow: var(--elevation_2dp);
     border-radius: 2px;
     transition: all .28s var(--easeInOut);
@@ -29,12 +29,31 @@
     padding: 25px 25px 0 25px;
     border-bottom: 1px solid var(--blackAlpha10);
     cursor: pointer;
+    position: relative;
+    display: block;
+  }
+
+  .item-star-count {
+    font-size: 14px;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    display: flex;
+    align-items: center;
+    color: var(--blackAlpha60);
+  }
+
+  .star-icon {
+    font-size: 18px;
+    width: 20px;
+    margin-left: 4px;
   }
 
   .item-name {
     color: var(--blackAlpha80);
     font-size: 17px;
-    font-weight: 600;
+    font-weight: 500;
+    display: inline-block;
   }
 
   .item-name:hover {
@@ -59,12 +78,32 @@
 
   .item-action-button {
     color: var(--blackAlpha50);
-    font-weight: 600;
+    font-weight: 500;
     font-size: 14px;
     margin: 0 10px;
   }
 
   .item-action-button:hover {
     color: var(--blackAlpha80);
+  }
+
+  .view-all-link {
+    color: var(--blackAlpha60);
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .view-all-link:hover {
+    color: var(--blackAlpha80);
+  }
+
+  @media screen and (--Tablet) {
+    max-width: var(--contentWidth);
+
+    .item {
+      margin: 20px 6px;
+    }
   }
 }

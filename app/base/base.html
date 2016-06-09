@@ -1,5 +1,3 @@
-{% import 'base/icon.html' as icon %}
-
 <!doctype html>
 <html class="wf-loading">
 <head>
@@ -10,48 +8,61 @@
   <link rel="stylesheet" href="/static/main.css">
 
   <title>Abhinay Omkar - {% block title %}{% endblock %}</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 </head>
 
 <body>
 
-<section class="main-container">
-    <header class="main-header">
+<div class="main-container">
+  <div class="main-header">
+    <div class="header-menu-button">
+      <i class="material-icons menu-icon">menu</i>
+    </div>
+    <div>
       <h1 class="main-title">Ao.</h1>
-        <ul class="main-header-nav">
-          <li>
-            <a class="nav-item {% if name == 'home' %} active{% endif %}" href="/">
-              Home
-            </a>
-          </li>
-          <li>
-            <a class="nav-item {% if name == 'projects' %} active{% endif %}" href="/projects">
-              Projects
-            </a>
-          </li>
-          <li>
-            <a class="nav-item {% if name == 'photography' %} active{% endif %}" href="/photography">
-              Photography
-            </a>
-          </li>
-          <li>
-            <a class="nav-item {% if name == 'contact' %} active{% endif %}" href="/contact">
-              Contact
-            </a>
-          </li>
-          <li>
-            <a class="nav-item nav-item-more" href="#">
-              {{ icon.render('moreVert') }}
-            </a>
-          </li>
-        </ul>
-    </header>
-    <section id="content">
-        {% block content %}{% endblock %}
-    </section>
-</section>
+    </div>
+    <div>
+      <ul class="main-header-nav">
+        <li>
+          <a class="nav-item {% if name == 'home' %} active{% endif %}" href="/">
+            Home
+          </a>
+        </li>
+        <li>
+          <a class="nav-item {% if name == 'projects' %} active{% endif %}" href="/projects">
+            Projects
+          </a>
+        </li>
+        <li>
+          <a class="nav-item {% if name == 'blog' %} active{% endif %}" href="//blog.abhiomkar.in">
+            Blog
+          </a>
+        </li>
+        <li>
+          <a class="nav-item {% if name == 'photography' %} active{% endif %}" href="/photography">
+            Photography
+          </a>
+        </li>
+        <li>
+          <a class="nav-item {% if name == 'about' %} active{% endif %}" href="/about">
+            About
+          </a>
+        </li>
+        <li>
+          <a class="nav-item {% if name == 'contact' %} active{% endif %}" href="/contact">
+            Contact
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="content">
+      {% block content %}{% endblock %}
+  </div>
+</div>
 
-<script src="https://use.typekit.net/poo6aga.js"></script>
-<script>try{Typekit.load({ async: true });}catch(e){}</script>
-
+<script src="./static/main.js"></script>
 </body>
 </html>

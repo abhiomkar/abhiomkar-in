@@ -14,6 +14,8 @@
 /* Base */
 html, body {
   height: 100%;
+  visibility: visible;;
+  opacity: 1;
 }
 
 body {
@@ -24,7 +26,7 @@ body {
   color: #666;
   line-height: 1;
 
-  font-family: "myriad-pro","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -93,14 +95,14 @@ p a {
 }
 
 /*Transitions*/
+* {
+  transition: all 0.15s ease-in-out;
+}
+
 a,
 #post-nav a,
 #post-list a {
-  -webkit-transition: all 0.15s ease;
-  -moz-transition: all 0.15s ease;
-  -ms-transition: all 0.15s ease;
-  -o-transition: all 0.15s ease;
-  transition: all 0.15s ease;
+  transition: all 0.15s ease-in-out;
 }
 
 ul {
@@ -119,7 +121,7 @@ p {
 }
 
 b, strong {
-  font-weight: bold;
+  font-weight: 500;
 }
 
 em, i {
@@ -132,22 +134,22 @@ h3, h4, h5 {
 
 h3 {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 h4 {
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 h5 {
   font-size: 15px;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 h6 {
   font-size: 13px;
-  font-weight: bold;
+  font-weight: 500;
   color: #666;
   margin-bottom: 6px;
 }
@@ -206,7 +208,7 @@ thead th, th {
   padding: 10px 15px;
   height: 20px;
   font-size: 13px;
-  font-weight: bold;
+  font-weight: 500;
   color: #444;
   border-bottom: 1px solid #dadadc;
   cursor: default;
@@ -238,7 +240,7 @@ footer {
   margin-top: 250px;
   text-align: center;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
   border-top: 1px solid #eee;
   padding-top: 20px;
 }
@@ -249,8 +251,4 @@ footer {
 
 .base-icon path {
   vertical-align: middle;
-}
-
-.wf-loading {
-  visibility: hidden;
 }

@@ -1,3 +1,3 @@
 import './base.css';
 
-console.log("Base");
+console.log('Base');
