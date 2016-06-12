@@ -1,5 +1,7 @@
 *.pyc
+*.swp
 .pip-init
 node_modules
 public/dist/*
 server/dist/*
+app/static/*

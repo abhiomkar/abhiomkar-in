@@ -1,0 +1,22 @@
+{% extends "base/base.html" %}
+{% block title %}{{ super() }}Photography{% endblock %}
+{% block content %}
+  {% macro gallery(photos) -%}
+    {% for photo_url in photos.photo_urls %}
+      <img src="{{ photo_url }}" />
+    {% endfor %}
+  {%- endmacro %}
+
+  <div class="{{ name }}-container">
+    <h1 class="title">Photography</h1>
+    {% for gallery_photos in gallery_photo_list %}
+      <div>
+        <a class="category">{{ gallery_photos.name }}</a>
+      </div>
+    {% endfor %}
+
+    {% for gallery_photos in gallery_photo_list %}
+      {{ gallery(gallery_photos) }}
+    {% endfor %}
+  </div>
+{% endblock %}

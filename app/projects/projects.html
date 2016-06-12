@@ -30,19 +30,8 @@
 
   <div class="{{ name }}-container">
     <div class="category">
-      <h1 class="title">Popular Repositories</h1>
+      <h1 class="title">Projects</h1>
       {% for repo in popular_list %}
-        {{ project_card(repo) }}
-      {% endfor %}
-
-      <a class="view-all-link" href="{{owner_url}}">
-        View All <i class="material-icons">chevron_right</i>
-      </a>
-    </div>
-
-    <div class="category">
-      <h1 class="title">Recent Repositories</h1>
-      {% for repo in recent_list %}
         {{ project_card(repo) }}
       {% endfor %}
 

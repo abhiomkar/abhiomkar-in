@@ -1,0 +1,17 @@
+@import "../base/base.css";
+
+.photography-container {
+  margin: 0 auto;
+  padding-bottom: 50px;
+  background: #141414;
+
+  .title {
+    font-size: 24px;
+    font-weight: 300;
+    margin: 8px;
+  }
+
+  @media screen and (--Tablet) {
+    max-width: var(--contentWidth);
+  }
+}

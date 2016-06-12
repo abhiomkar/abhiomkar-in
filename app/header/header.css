@@ -1,3 +1,8 @@
+@import "./color.css";
+@import "./shadow.css";
+@import "./transition.css";
+@import "./media.css";
+
 .main-header {
   background: #fff;
   display: flex;
@@ -5,8 +10,9 @@
   align-items: center;
   padding: 8px 16px;
   max-width: 576px;
-  margin: 12px auto 0 auto;
-  height: 92px;
+  margin: 0 auto;
+  height: 75px;
+
 
   .header-menu-button {
     cursor: pointer;
@@ -60,6 +66,8 @@
   }
 
   @media screen and (--Desktop) {
+    margin-top: 12px;
+
     .header-menu-button {
       display: none;
     }

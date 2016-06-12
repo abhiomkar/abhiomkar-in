@@ -30,6 +30,12 @@ def projects():
 
     return render_template("projects/projects.html", **locals())
 
+@app.route("/photography")
+def photography():
+    name = "photography"
+    gallery_photo_list = json.loads(open(settings.APP_PATH + "/photography/photography.json").read())
+    return render_template("photography/photography.html", **locals())
+
 # @app.route('/public/<path:path>')
 # def serve_static(path):
 #     return send_from_directory('../public', path)
