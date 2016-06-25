@@ -3,13 +3,8 @@
 @import "./shadow.css";
 @import "./transition.css";
 @import "./media.css";
+@import "./variable.css";
 @import "../header/header.css";
-
-/* Variables */
-
-:root {
-  --contentWidth: 576px;
-}
 
 /* Base */
 html, body {
@@ -230,11 +225,6 @@ pre, code {
   line-height: 20px;
 }
 
-.main-container {
-    max-width: 800px;
-    margin: auto;
-}
-
 footer {
   color: #aaa;
   margin-top: 250px;
@@ -251,4 +241,13 @@ footer {
 
 .base-icon path {
   vertical-align: middle;
+}
+
+img {
+  opacity: 1;
+  transition: opacity 0.15s ease-in-out;
+}
+
+img[data-src] {
+  opacity: 0;
 }

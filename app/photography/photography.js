@@ -1,3 +1,5 @@
 import './photography.css';
 
-console.log("Photography");
+const PhotographyController = function() {
+
+};
