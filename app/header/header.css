@@ -5,14 +5,16 @@
 
 .main-header {
   background: #fff;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 8px 0;
-  max-width: 576px;
-  margin: 0 auto;
-  height: 75px;
 
+  .header-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px 0;
+    max-width: 576px;
+    margin: 0 auto;
+    height: 75px;
+  }
 
   .header-menu-button {
     cursor: pointer;
@@ -66,7 +68,9 @@
   }
 
   @media screen and (--Desktop) {
-    margin-top: 12px;
+    .header-wrapper {
+      margin-top: 12px;
+    }
 
     .header-menu-button {
       display: none;

@@ -22,6 +22,12 @@ body {
   line-height: 1;
 
   font-family: 'Roboto', sans-serif;
+
+  margin-top: -12px;
+}
+
+body.is-dark {
+  background: #141414;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {

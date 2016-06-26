@@ -1,4 +1,5 @@
 {% extends "base/base.html" %}
+{% block body_classes %} is-dark {% endblock %}
 {% block title %}{{ super() }}Photography{% endblock %}
 {% block content %}
   {% macro gallery(photos) -%}
@@ -8,24 +9,26 @@
   {%- endmacro %}
 
   <div class="{{ name }}-container">
-    <h1 class="title">Photography</h1>
+    <div class="content-wrapper">
+      <h1 class="title">Photography</h1>
 
-    <div class="category-nav">
-      {% for gallery_photos in gallery_photo_list %}
-        <a class="category-link {% if loop.first %} is-selected{%- endif %}">{{ gallery_photos.name }}</a>
-      {% endfor %}
-    </div>
+      <!-- gallery navigation list -->
+      <div class="category-nav">
+        {% for gallery_photos in gallery_photo_list %}
+        <a data-gallery-id="{{ gallery_photos.name | replace(' ', '-') | lower }}"
+            class="category-link {% if loop.first %} is-selected{%- endif %}">{{ gallery_photos.name }}</a>
+        {% endfor %}
+      </div>
 
-    <div class="gallery-list">
-      {% for gallery_photos in gallery_photo_list %}
-        <div class="gallery-container">
-          <i class="material-icons chevron-left photo-nav-arrow photo-nav-arrow-left">chevron_left</i>
-          <div class="gallery {% if loop.first %} is-visible{%- endif %}">
+      <div class="gallery-list">
+        {% for gallery_photos in gallery_photo_list %}
+          <!-- photo gallery -->
+          <div data-gallery-id="{{ gallery_photos.name | replace(' ', '-') | lower }}"
+              class="gallery {% if loop.first %} is-visible{%- endif %}">
             {{ gallery(gallery_photos) }}
           </div>
-          <i class="material-icons chevron-right photo-nav-arrow photo-nav-arrow-right">chevron_right</i>
-        </div>
-      {% endfor %}
+        {% endfor %}
+      </div>
     </div>
   </div>
 {% endblock %}
