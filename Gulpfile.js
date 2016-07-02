@@ -27,12 +27,8 @@ var serverRoot = 'server';
 
 // map of all our paths
 var paths = {
-  js: 'app/**/*!(.spec.js).js', // don't include spec files
-  css: 'app/**/*.css', // css files
+  src: ['app/**/*.{css,js,html}', '!app/static/**'],
   images: 'app/images/**/*.*', // image files
-  html: [
-    'app/**/*.html'
-  ],
 
   entry: 'app/main.js',
   output: 'app/static/'
@@ -57,12 +53,7 @@ gulp.task('browser-sync', function() {
 });
 
 gulp.task('watch:frontend', function(){
-  var allPaths = [].concat(
-    [paths.js],
-    paths.html,
-    [paths.css],
-    [paths.images]
-  );
+  var allPaths = [].concat(paths.src, paths.images);
 
   gulp.watch(allPaths, ['webpack:frontend', reload]);
 });

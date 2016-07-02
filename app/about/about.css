@@ -1,0 +1,13 @@
+@import "../base/base.css";
+
+.about-container {
+  font-size: 16px;
+  color: var(--blackAlpha84);
+  padding-bottom: 15px;
+
+  .content {
+    padding: 0 12px;
+    max-width: var(--contentWidth);
+    margin: 12px auto 0 auto;
+  }
+}

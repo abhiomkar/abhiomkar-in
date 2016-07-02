@@ -19,6 +19,7 @@
   .header-menu-button {
     cursor: pointer;
     margin-right: 4px;
+    margin-left: 10px;
   }
 
   .main-title {

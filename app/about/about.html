@@ -1,0 +1,9 @@
+{% extends "base/base.html" %}
+{% block title %}{{ super() }}About{% endblock %}
+{% block content %}
+    <div class="{{ name }}-container">
+      <div class="content">
+        {{ content }}
+      </div>
+    </div>
+{% endblock %}

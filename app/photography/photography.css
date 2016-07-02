@@ -12,7 +12,7 @@
     max-width: var(--contentWidth);
     margin: 0 auto;
     width: 100%;
-    padding: 18px 0;
+    padding: 18px 8px;
   }
 
   .category-nav {
@@ -22,7 +22,7 @@
     max-width: var(--contentWidth);
     width: 100%;
     margin: 0 auto;
-    padding-bottom: 20px;
+    padding: 0 0 12px 8px;
   }
 
   .category-link {
@@ -54,16 +54,20 @@
   }
 
   .photo {
-    height: 380px;
-    margin-bottom: 12px;
-    /* 3px 3px 16px rgba(0, 0, 0, 0.71) */
+    padding: 0 8px 4px 8px;
     border-radius: 2px;
+    width: 100%;
   }
 
   @media screen and (--Tablet) {
     .content-wrapper {
       max-width: var(--contentWidth);
       margin: 0 auto;
+    }
+
+    .photo {
+      width: auto;
+      height: 380px;
     }
   }
 }

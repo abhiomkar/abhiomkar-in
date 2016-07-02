@@ -2,7 +2,14 @@ import './photography.css';
 
 class Photography {
   constructor () {
+    console.log('Photography');
+
     this.$el = document.querySelector('.photography-container');
+
+    if (!this.$el) {
+      return;
+    }
+
     this.$galleryNav = this.$el.querySelector('.category-nav');
     this.$galleryList = this.$el.querySelector('.gallery-list');
 
