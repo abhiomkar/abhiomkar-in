@@ -9,7 +9,6 @@
   .title {
     font-size: 24px;
     font-weight: 300;
-    max-width: var(--contentWidth);
     margin: 0 auto;
     width: 100%;
     padding: 18px 8px;
@@ -19,7 +18,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    max-width: var(--contentWidth);
     width: 100%;
     margin: 0 auto;
     padding: 0 0 12px 8px;
@@ -46,6 +44,8 @@
     visibility: hidden;
     opacity: 0;
     position: absolute;
+    top: 0;
+    transition: opacity 0.5s ease-in-out;
   }
 
   .gallery.is-visible {
@@ -53,21 +53,24 @@
     opacity: 1;
   }
 
-  .photo {
+  .gallery.display-none {
+    display: none;
+  }
+
+  .photo-container {
     padding: 0 8px 4px 8px;
-    border-radius: 2px;
     width: 100%;
+  }
+
+  .photo {
+    width: 100%;
+    border-radius: 2px;
   }
 
   @media screen and (--Tablet) {
     .content-wrapper {
-      max-width: var(--contentWidth);
+      max-width: var(--containerWidth);
       margin: 0 auto;
-    }
-
-    .photo {
-      width: auto;
-      height: 380px;
     }
   }
 }

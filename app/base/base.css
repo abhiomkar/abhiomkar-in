@@ -95,12 +95,6 @@ p a {
   color: #5694f1;
 }
 
-/*Transitions*/
-* {
-  transition: all 0.15s ease-in-out;
-}
-
-a,
 #post-nav a,
 #post-list a {
   transition: all 0.15s ease-in-out;

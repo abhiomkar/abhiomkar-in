@@ -52,10 +52,14 @@ class Photography {
 
     // show target gallery
     this.$galleryList.querySelectorAll('.gallery').forEach((galleryEl) => {
+      // galleryEl.classList.remove('display-none');
       galleryEl.classList.remove('is-visible');
     });
     const $selectedGallery = this.$galleryList.querySelector(`[data-gallery-id="${galleryId}"`);
     $selectedGallery.classList.add('is-visible');
+    // $selectedGallery.addEventListener('transitionend', () => {
+    //   galleryEl.classList.add('display-none');
+    // });
   }
 }
 
