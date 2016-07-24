@@ -1,5 +1,6 @@
 *.pyc
 *.swp
+*.swo
 .pip-init
 node_modules
 public/dist/*

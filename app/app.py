@@ -42,6 +42,12 @@ def about():
     content = Markup(markdown.markdown(open(settings.APP_PATH + "/about/about.md").read()))
     return render_template("about/about.html", **locals())
 
+@app.route("/contact")
+def contact():
+    name = "contact"
+    content = Markup(markdown.markdown(open(settings.APP_PATH + "/contact/contact.md").read()))
+    return render_template("contact/contact.html", **locals())
+
 # @app.route('/public/<path:path>')
 # def serve_static(path):
 #     return send_from_directory('../public', path)

@@ -1,0 +1,41 @@
+{% extends "base/base.html" %}
+{% block title %}{{ super() }}Contact{% endblock %}
+{% block content %}
+  <div class="{{ name }}-container">
+    <div class="content">
+      <div class="contact-card paper-card">
+        <div class="profile-container">
+          <div class="avatar">
+          </div>
+          <div class="name">
+            Abhinay Omkar
+          </div>
+          <div class="email">
+            <a href="mailto:abhiomkar@gmail.com">abhiomkar@gmail.com</a>
+          </div>
+          <div class="location">
+            Bangalore, India
+          </div>
+          <div class="social-links">
+            <a class="facebook-link social-link" href="https://facebook.com/abhiomkar"></a>
+            <a class="twitter-link social-link" href="https://twitter.com/abhiomkar"></a>
+          </div>
+        </div>
+        <div class="contact-form">
+          <div class="form-row form-row-subject">
+            <label for="contact-subject">Subject</label>
+            <input tabindex="0" type="text" id="contact-subject" class="contact-subject" placeholder="Just saying hello" />
+          </div>
+          <div class="form-row form-row-from">
+            <label for="contact-from">From</label>
+            <input type="text" id="contact-from" class="contact-from" placeholder="elon@spacex.com" />
+          </div>
+          <div class="form-body-row">
+            <textarea class="contact-form-body" placeholder="(Optional) Type something here..."></textarea>
+            <button class="flat-colored-button form-submit-button"><i class="material-icons send-icon">send</i> Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

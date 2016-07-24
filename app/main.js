@@ -2,6 +2,7 @@ import './home/home.js';
 import './projects/projects.js';
 import './photography/photography.js';
 import './about/about.js';
+import './contact/contact.js';
 
 class Main {
   constructor () {
@@ -19,4 +20,3 @@ class Main {
 }
 
 window.addEventListener('load', () => new Main());
-

@@ -251,3 +251,53 @@ img {
 img[data-src] {
   opacity: 0;
 }
+
+.main-container, .main-content {
+  height: 100%;
+}
+
+.paper-card {
+  background: #fff;
+  box-shadow: var(--elevation_1dp);
+  border: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+input[type="text"] {
+  font-size: 14px;
+  outline: 0;
+  border: 0;
+}
+
+textarea {
+  font-size: 14px;
+  outline: 0;
+  border: 0;
+}
+
+.flat-colored-button {
+  background: #4285F4;
+  text-transform: uppercase;
+  color: #fff;
+  border: 0;
+  font-weight: bold;
+  font-size: 13px;
+  border-radius: 2px;
+  box-shadow: var(--elevation_1dp);
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 84px;
+  outline: 0;
+  transition: all 0.15 ease-in-out;
+  cursor: pointer;
+}
+
+.flat-colored-button:active {
+  box-shadow: none;
+}
+
+.flat-colored-button.disabled {
+  color: var(--blackAlpha80);
+  background: var(--blackAlpha20);
+}
