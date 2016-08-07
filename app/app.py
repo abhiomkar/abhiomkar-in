@@ -6,6 +6,10 @@ from operator import itemgetter
 from flask import Flask, send_from_directory
 from flask import render_template
 from flask import Markup
+from flask import request
+from flask import jsonify
+
+from google.appengine.api import mail
 
 import settings
 
@@ -47,6 +51,17 @@ def contact():
     name = "contact"
     content = Markup(markdown.markdown(open(settings.APP_PATH + "/contact/contact.md").read()))
     return render_template("contact/contact.html", **locals())
+
+@app.route("/contact/sendmail", methods=['POST'])
+def sendmail():
+    sender_email = request.form['contact-sender-email']
+    sender_mail_subject = request.form['contact-subject']
+    sender_mail_body = request.form['contact-body']
+
+    mail.send_mail(sender="abhiomkar@gmail.com", to="abhiomkar@gmail.com",
+            subject=sender_mail_subject, body=sender_mail_body, reply_to=sender_email)
+
+    return jsonify(results={'status': 'OK'})
 
 # @app.route('/public/<path:path>')
 # def serve_static(path):

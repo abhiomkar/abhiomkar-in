@@ -120,6 +120,11 @@
     position: relative;
   }
 
+  .contact-form {
+    overflow: hidden;
+    position: relative
+  }
+
   .contact-form-body {
     padding: 14px;
     height: 220px;
@@ -138,4 +143,61 @@
     margin-right: 6px;
   }
 
+  .status-bar {
+    visibility: hidden;
+    transition: all .24s ease-out;
+    transform: translateY(100%);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: inline-block;
+    background: #F44336;
+    margin: 0 auto;
+    text-align: center;
+    color: #FFF;
+    padding: 15px;
+    width: 280px;
+    border-radius: 3px 3px 0 0;
+    font-size: 14px;
+
+    &.is-visible {
+      visibility: visible;
+      transform: none;
+    }
+  }
+
+  .slide-container {
+    height: 78px;
+  }
+
+  .about-section {
+    transition: all 0.5s ease-out;
+    visibility: hidden;
+    transform: translate(28px, 0);
+    opacity: 0;
+
+    &.is-visible {
+      visibility: visible;
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .thank-you {
+    transition: all 0.5s ease-out;
+    visibility: hidden;
+    transform: translate(44px, -60px);
+    opacity: 0;
+    width: 260px;
+    margin: 0 auto;
+    color: var(--blackAlpha84);
+    font-size: 13px;
+
+    &.is-visible {
+      visibility: visible;
+      opacity: 1;
+      transform: translate(0, -60px);
+    }
+  }
 }

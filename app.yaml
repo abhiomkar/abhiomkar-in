@@ -1,0 +1,16 @@
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+skip_files:
+- ^node_modules/.*$
+- ^.*.pyc$
+- ^.*.swp$
+- ^.*.swo$
+- ^.DS_Store$
+
+handlers:
+- url: /static
+  static_dir: app/static/
+- url: .*
+  script: app.app.app
