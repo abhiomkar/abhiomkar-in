@@ -17,8 +17,10 @@ class Photography {
     this.addEventListeners();
 
     // shows gallery which is currently selected.
-    const galleryId = window.location.hash || 
+    const galleryId = location.hash || 
         this.$galleryNav.querySelector('.is-selected').getAttribute('data-gallery-id');
+    this.showGallery = this.showGallery.bind(this);
+      
     this.showGallery(galleryId);
   }
 
@@ -29,7 +31,8 @@ class Photography {
   navigateToGallery (ev) {
     ev.preventDefault();
     const galleryId = ev.target.getAttribute('data-gallery-id');
-    window.location.hash = galleryId;
+    location.hash = galleryId;
+
     this.showGallery(galleryId);
   }
 
@@ -39,7 +42,7 @@ class Photography {
     }
 
     // select gallery nav link
-    const $selectedNavLink = this.$galleryNav.querySelector(`[data-gallery-id="${galleryId}"`);
+    const $selectedNavLink = this.$galleryNav.querySelector(`[data-gallery-id="${galleryId}"]`);
     // do nothing if the gallery with the id doesn't exist including no hash.
     if (!$selectedNavLink) { return; }
     this.$galleryNav.querySelectorAll('.category-link').forEach((linkEl) => {
@@ -48,7 +51,7 @@ class Photography {
     $selectedNavLink.classList.add('is-selected');
 
     // show target gallery
-    const $selectedGallery = this.$galleryList.querySelector(`[data-gallery-id="${galleryId}"`);
+    const $selectedGallery = this.$galleryList.querySelector(`[data-gallery-id="${galleryId}"]`);
     this.$galleryList.querySelectorAll('.gallery').forEach((galleryEl) => {
       galleryEl.classList.remove('is-visible');
     });
@@ -58,7 +61,7 @@ class Photography {
   }
 
   lazyLoadImagesOnGallery ($gallery) {
-    $gallery.querySelectorAll('img[data-src]').forEach(($image) => {
+    $gallery.querySelectorAll('img[data-src]').forEach(($image, i) => {
       if ($image.hasAttribute('lazy')) {
         $image.setAttribute('src', $image.getAttribute('data-src'));
         $image.onload = function() {
