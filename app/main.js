@@ -12,7 +12,7 @@ class Main {
   }
 
   lazyLoadImages () {
-    [].forEach.call(document.querySelectorAll('img[data-src]'), function(img) {
+    Array.from(document.querySelectorAll('img[data-src]')).forEach((img) => {
       if (!img.hasAttribute('lazy')) {
         img.setAttribute('src', img.getAttribute('data-src'));
         img.onload = function() {

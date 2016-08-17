@@ -32,6 +32,10 @@ body.is-dark {
   background: #141414;
 }
 
+h1 {
+ margin: 22px 8px;
+}
+
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block;
 }
