@@ -1,4 +1,5 @@
 import './header.css';
+import Common from '../common/common.js';
 
 class Header {
   constructor () {
@@ -12,7 +13,7 @@ class Header {
   }
 
   addEventListeners () {
-    this.$menuButton.addEventListener('click', () => this.toggleMenuVisibility());
+    this.$menuButton.addEventListener(Common.isTouchDevice() ? 'touchend' : 'click', () => this.toggleMenuVisibility());
   }
 
   toggleMenuVisibility () {

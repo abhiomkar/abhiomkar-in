@@ -5,7 +5,7 @@
   {% macro gallery(photos) -%}
     {% for photo_url in photos.photo_urls %}
       <div class="photo-container">
-        <img data-src="{{ photo_url }}" class="photo" />
+        <img lazy data-src="{{ photo_url }}" class="photo" />
       </div>
     {% endfor %}
   {%- endmacro %}

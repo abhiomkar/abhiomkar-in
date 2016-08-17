@@ -1,4 +1,5 @@
 import './photography.css';
+import Common from '../common/common.js';
 
 class Photography {
   constructor () {
@@ -13,28 +14,26 @@ class Photography {
     this.$galleryNav = this.$el.querySelector('.category-nav');
     this.$galleryList = this.$el.querySelector('.gallery-list');
 
-    this.navigateToGallery = this.navigateToGallery.bind(this);
-    this.showGallery = this.showGallery.bind(this);
     this.addEventListeners();
 
-    // shows current gallery based on the url hash
-    this.showGallery();
+    // shows gallery which is currently selected.
+    const galleryId = window.location.hash || 
+        this.$galleryNav.querySelector('.is-selected').getAttribute('data-gallery-id');
+    this.showGallery(galleryId);
   }
 
   addEventListeners () {
-    this.$galleryNav.addEventListener('click', this.navigateToGallery);
-    if (window.location.pathname === '/photography') {
-      window.addEventListener('hashchange', this.showGallery);
-    }
+    this.$galleryNav.addEventListener(Common.isTouchDevice() ? 'touchend' : 'click', (e) => this.navigateToGallery(e));
   }
 
   navigateToGallery (ev) {
+    ev.preventDefault();
     const galleryId = ev.target.getAttribute('data-gallery-id');
     window.location.hash = galleryId;
+    this.showGallery(galleryId);
   }
 
-  showGallery () {
-    let galleryId = window.location.hash;
+  showGallery (galleryId) {
     if (galleryId.startsWith('#')) {
       galleryId = galleryId.slice(1);
     }
@@ -42,24 +41,31 @@ class Photography {
     // select gallery nav link
     const $selectedNavLink = this.$galleryNav.querySelector(`[data-gallery-id="${galleryId}"`);
     // do nothing if the gallery with the id doesn't exist including no hash.
-    if (!$selectedNavLink) {
-      return;
-    }
+    if (!$selectedNavLink) { return; }
     this.$galleryNav.querySelectorAll('.category-link').forEach((linkEl) => {
       linkEl.classList.remove('is-selected');
     });
     $selectedNavLink.classList.add('is-selected');
 
     // show target gallery
+    const $selectedGallery = this.$galleryList.querySelector(`[data-gallery-id="${galleryId}"`);
     this.$galleryList.querySelectorAll('.gallery').forEach((galleryEl) => {
-      // galleryEl.classList.remove('display-none');
       galleryEl.classList.remove('is-visible');
     });
-    const $selectedGallery = this.$galleryList.querySelector(`[data-gallery-id="${galleryId}"`);
     $selectedGallery.classList.add('is-visible');
-    // $selectedGallery.addEventListener('transitionend', () => {
-    //   galleryEl.classList.add('display-none');
-    // });
+
+    this.lazyLoadImagesOnGallery($selectedGallery);
+  }
+
+  lazyLoadImagesOnGallery ($gallery) {
+    $gallery.querySelectorAll('img[data-src]').forEach(($image) => {
+      if ($image.hasAttribute('lazy')) {
+        $image.setAttribute('src', $image.getAttribute('data-src'));
+        $image.onload = function() {
+          $image.removeAttribute('data-src');
+        };
+      }
+    });
   }
 }
 
