@@ -4,13 +4,15 @@
 @import "./transition.css";
 @import "./media.css";
 @import "./variable.css";
-@import "../header/header.css";
 
 /* Base */
 html, body {
   height: 100%;
   visibility: visible;;
   opacity: 1;
+  color: var(--blackAlpha84);
+  background: var(--colorGrey200);
+  font-size: 14px;
 }
 
 body {

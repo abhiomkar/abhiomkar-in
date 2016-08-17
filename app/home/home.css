@@ -1,18 +1,15 @@
-@import "../base/base.css";
+@import "../common/variable.css";
 
 .home-container {
   height: 100%;
-  font-size: 16px;
-  color: var(--blackAlpha84);
-  background: var(--colorGrey200);
-  padding: 12px 0 15px 0;
+  padding: 0 0 15px 0;
 
   .cover-pic {
     width: 100%;
     display: block;
     max-width: 550px;
     margin: 0 auto 15px;
-    height: 323px;
+    max-height: 323px;
   }
 
   .content {

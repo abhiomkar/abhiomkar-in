@@ -1,3 +1,5 @@
+import './common/base.js';
+import './header/header.js';
 import './home/home.js';
 import './projects/projects.js';
 import './photography/photography.js';

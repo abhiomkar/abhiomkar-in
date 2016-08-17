@@ -1,6 +1,4 @@
 import './contact.css';
-import '../base/base.js';
-
 import 'whatwg-fetch';
 
 class Contact {
@@ -14,12 +12,11 @@ class Contact {
     this.$form = this.$el.querySelector('#contact-form');
     this.$sendButton = this.$el.querySelector('#contact-send-button');
 
-    this.sendEmail = this.sendEmail.bind(this);
     this.addEventListeners();
   }
 
   addEventListeners () {
-    this.$sendButton.addEventListener('click', this.sendEmail);
+    this.$sendButton.addEventListener('click', (e) => this.sendEmail(e));
   }
 
   sendEmail (e) {

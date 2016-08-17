@@ -27,51 +27,51 @@ fs.readdirSync('node_modules')
 var Module = {};
 
 Module.frontend = {
-	devtool: 'sourcemap',
-	output: {
-		filename: 'main.js'
-	},
-	resolve: {
-		alias: {
+  devtool: 'sourcemap',
+  output: {
+    filename: 'main.js'
+  },
+  resolve: {
+    alias: {
       // example:
-			// 'bootstrap.css': "node_modules/bootstrap/dist/css/bootstrap.css"
-		}
-	},
-	module: {
-		loaders: [
-			 { test: /\.js$/, exclude: [/app\/lib/, /node_modules/], loader: 'babel' },
+      // 'bootstrap.css': "node_modules/bootstrap/dist/css/bootstrap.css"
+    }
+  },
+  module: {
+    loaders: [
+       { test: /\.js$/, exclude: [/app\/lib/, /node_modules/], loader: 'babel' },
        { test: /\.html$/, loader: 'raw' },
-			 // inline base64 URLs for <=12k images, direct URLs for the rest otherwise serve as file
-			 { test: /\.(jpg|jpeg|png|gif|svg)$/, loaders: ['url-loader?limit=12288'] },
-			 { test: /\.(eot|woff2|woff|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?(\?iefix)?(#webfont)?$/, loaders: ['file'] },
-			 { test: /\.css$/, loader: ExtractTextPlugin.extract('css-loader!postcss-loader') }
-		]
-	},
-	postcss: [cssimport(), autoprefixer({browsers: browserslist.defaults}), cssnext(), nestedcss()],
-	plugins: [
-  	new ExtractTextPlugin("[name].css"),
-		new webpack.ProvidePlugin({
-			// $: 'jquery',
-			// jQuery: 'jquery',
-			// "window.jQuery": "jquery",
-			// "root.jQuery": "jquery"
-		})
+       // inline base64 URLs for <=12k images, direct URLs for the rest otherwise serve as file
+       { test: /\.(jpg|jpeg|png|gif|svg)$/, loaders: ['url-loader?limit=12288'] },
+       { test: /\.(eot|woff2|woff|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?(\?iefix)?(#webfont)?$/, loaders: ['file'] },
+       { test: /\.css$/, loader: ExtractTextPlugin.extract('css-loader!postcss-loader') }
+    ]
+  },
+  postcss: [cssimport(), autoprefixer({browsers: browserslist.defaults}), cssnext(), nestedcss()],
+  plugins: [
+    new ExtractTextPlugin("[name].css"),
+    new webpack.ProvidePlugin({
+      // $: 'jquery',
+      // jQuery: 'jquery',
+      // "window.jQuery": "jquery",
+      // "root.jQuery": "jquery"
+    })
   ],
-	node: {
-		console: true
-	}
+  node: {
+    console: true
+  }
 };
 
 if (env === 'production') {
-	function minifyJS() {
-		return new webpack.optimize.UglifyJsPlugin({
-			compress: {
-				warnings: false
-			}
-		})
-	}
+  function minifyJS() {
+    return new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    })
+  }
 
-	Module.frontend.plugins.push(minifyJS());
+  Module.frontend.plugins.push(minifyJS());
 }
 
 module.exports = Module;

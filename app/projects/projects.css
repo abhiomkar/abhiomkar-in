@@ -1,4 +1,8 @@
-@import "../base/base.css";
+@import "../common/color.css";
+@import "../common/shadow.css";
+@import "../common/transition.css";
+@import "../common/media.css";
+@import "../common/variable.css";
 
 .projects-container {
   margin: 0 auto;

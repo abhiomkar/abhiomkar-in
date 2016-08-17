@@ -1,4 +1,6 @@
-@import "../base/base.css";
+@import "../common/color.css";
+@import "../common/variable.css";
+@import "../common/shadow.css";
 
 .contact-container {
   height: 100%;

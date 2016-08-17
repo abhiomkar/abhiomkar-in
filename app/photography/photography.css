@@ -1,4 +1,5 @@
-@import "../base/base.css";
+@import "../common/media.css";
+@import "../common/variable.css";
 
 .photography-container {
   margin: 0 auto;

@@ -1,4 +1,6 @@
-@import "../base/base.css";
+@import "../common/shadow.css";
+@import "../common/color.css";
+@import "../common/variable.css";
 
 .about-container {
   font-size: 16px;

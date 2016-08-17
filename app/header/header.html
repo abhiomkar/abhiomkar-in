@@ -1,45 +1,32 @@
-<div class="main-header">
-  <div class="header-wrapper">
-    <div class="header-menu-button">
+{% macro navitem(label, href, is_active) -%}
+  <a class="nav-item {% if is_active %} active{% endif %}" href="{{ href }}">
+    {{ label }}
+  </a>
+{%- endmacro %}
+
+{% macro navlist() -%}
+  {{ navitem('Home', '/', name == 'home') }}
+  {{ navitem('Projects', '/projects', name == 'projects') }}
+  {{ navitem('Blog', '//blog.abhiomkar.in', False) }}
+  {{ navitem('Photography', '/photography', name == 'photography') }}
+  {{ navitem('About', '/about', name == 'about') }}
+  {{ navitem('Contact', '/contact', name == 'contact') }}
+{%- endmacro %}
+
+<div class="main-header header-container">
+  <div class="header-bar">
+    <button class="header-menu-button">
       <i class="material-icons menu-icon">menu</i>
-    </div>
+    </button>
     <div>
       <a href="/"><h1 class="main-title">Ao.</h1></a>
     </div>
-    <div>
-      <ul class="main-header-nav">
-        <li>
-          <a class="nav-item {% if name == 'home' %} active{% endif %}" href="/">
-            Home
-          </a>
-        </li>
-        <li>
-          <a class="nav-item {% if name == 'projects' %} active{% endif %}" href="/projects">
-            Projects
-          </a>
-        </li>
-        <li>
-          <a class="nav-item {% if name == 'blog' %} active{% endif %}" href="//blog.abhiomkar.in">
-            Blog
-          </a>
-        </li>
-        <li>
-          <a class="nav-item {% if name == 'photography' %} active{% endif %}" href="/photography">
-            Photography
-          </a>
-        </li>
-        <li>
-          <a class="nav-item {% if name == 'about' %} active{% endif %}" href="/about">
-            About
-          </a>
-        </li>
-        <li>
-          <a class="nav-item {% if name == 'contact' %} active{% endif %}" href="/contact">
-            Contact
-          </a>
-        </li>
-      </ul>
+    <div class="horizontal-nav">
+      {{ navlist() }}
     </div>
+  </div>
+  <div class="vertical-nav">
+    {{ navlist() }}
   </div>
 </div>
 

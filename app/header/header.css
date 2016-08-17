@@ -1,25 +1,43 @@
-@import "./color.css";
-@import "./shadow.css";
-@import "./transition.css";
-@import "./media.css";
+@import "../common/shadow.css";
+@import "../common/color.css";
+@import "../common/media.css";
 
 .main-header {
   background: #fff;
+  position: relative;
+  color: var(--blackAlpha90);
+  height: 85px;
 
-  .header-wrapper {
+  .header-bar {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     padding: 8px 0;
     max-width: 576px;
     margin: 0 auto;
-    height: 75px;
+    height: 100%;
+    box-sizing: border-box;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: #fff;
   }
 
   .header-menu-button {
     cursor: pointer;
-    margin-right: 4px;
     margin-left: 10px;
+    margin-top: 4px;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    width: 32px;
+    height: 32px;
+
+    &.is-active {
+      color: var(--blueSelected);
+    }
   }
 
   .main-title {
@@ -29,56 +47,67 @@
     font-size: 32px;
     margin: 0;
     letter-spacing: -1px;
-    color: var(--blackMediumDark);
     text-align: center;
     width: 100%;
     display: block;
-    margin-right: 24px;
+    margin-left: 12px;
+    color: var(--blackAlpha90);
   }
 
-  .main-header-nav {
+  .horizontal-nav {
     white-space: nowrap;
     display: none;
+
+      .nav-item {
+        color: var(--blackAlpha90);
+        display: block;
+        font-weight: 500;
+        margin: 0 14px;
+      }
+
+      .nav-item.active {
+        color: var(--blueSelected);
+      }
   }
 
-  .nav-item {
-    display: block;
-    color: var(--blackAlpha90);
-    font-size: 14px;
-    font-weight: 500;
-    vertical-align: middle;
-    margin: 0 14px;
-  }
-
-  .nav-item.active {
-    color: var(--blueSelected);
-  }
-
-  .nav-item-more {
-    color: var(--blackAlpha80);
-    margin: 0 8px 0 0;
-    height: 24px;
-    width: 24px;
-  }
-
-  .main-description {
-    text-align: center;
-    color: #aaa;
+  .vertical-nav {
+    position: absolute;
     width: 100%;
-    display: block;
+    top: 85px;
+    background: #fff;
+    border-top: 1px solid #f1f1f1;
+    box-shadow: var(--elevation_2dp);
+    visibility: hidden;
+    transform: translateY(-100%);
+    transition: all 0.24s ease-in-out;
+
+    .nav-item {
+      color: var(--blackAlpha90);
+      display: block;
+      font-weight: 500;
+      padding: 20px 12px;
+      text-align: center;
+      border-bottom: 1px solid #f1f1f1;
+    }
+
+    .nav-item.active {
+      color: var(--blueSelected);
+    }
+  }
+
+  .vertical-nav.is-visible {
+    transform: none;
+    visibility: visible;
   }
 
   @media screen and (--Desktop) {
-    .header-wrapper {
-      margin-top: 12px;
-    }
-
     .header-menu-button {
       display: none;
     }
 
-    .main-header-nav {
-      display: block;
+    .horizontal-nav {
+      display: flex;
+      margin-left: 20px;
     }
   }
 }
