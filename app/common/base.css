@@ -11,7 +11,7 @@ html, body {
   visibility: visible;;
   opacity: 1;
   color: var(--blackAlpha84);
-  background: var(--colorGrey200);
+  background: #f9f9f9;
   font-size: 16px;
 }
 
@@ -99,6 +99,10 @@ a,
 
 p a {
   color: #5694f1;
+}
+
+p {
+  line-height: 2;
 }
 
 #post-nav a,

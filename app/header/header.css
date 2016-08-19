@@ -130,6 +130,7 @@
         display: block;
         font-weight: 500;
         margin: 0 14px;
+        font-size: 14px;
       }
 
       .nav-item.active {
@@ -171,6 +172,10 @@
   @media screen and (--Desktop) {
     .menu {
       display: none;
+    }
+
+    .main-title {
+      margin-left: 14px;
     }
 
     .horizontal-nav {
