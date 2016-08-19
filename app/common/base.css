@@ -12,7 +12,7 @@ html, body {
   opacity: 1;
   color: var(--blackAlpha84);
   background: var(--colorGrey200);
-  font-size: 14px;
+  font-size: 16px;
 }
 
 body {
@@ -114,11 +114,6 @@ ul {
 li {
   list-style-type: circle;
   list-style-position: inside;
-}
-
-/* Line Height */
-p {
-  line-height: 2;
 }
 
 b, strong {

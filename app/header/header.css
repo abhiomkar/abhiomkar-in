@@ -3,6 +3,10 @@
 @import "../common/media.css";
 @import "../common/variable.css";
 
+:root {
+  --transitionSpeed: 0.24s;
+}
+
 .main-header {
   background: #fff;
   position: relative;
@@ -23,6 +27,70 @@
     left: 0;
     right: 0;
     background: #fff;
+  }
+
+  .menu {
+    margin-right: 14px;
+    cursor: pointer;
+    margin: 0 16px;
+  }
+
+  .menu .line {
+    margin: 4px 0;
+    background: rgba(0, 0, 0, 0.64);
+    height: 2px;
+    width: 24px;
+    border-radius: 2px;
+    transform: none;
+    opacity: 1;
+    transition: all var(--transitionSpeed) ease-in-out;
+  }
+
+  .menu .line1-container, .menu .line3-container {
+    transition: all var(--transitionSpeed) ease-in-out;
+    transition-delay: var(--transitionSpeed);
+  }
+
+  .menu .line1-container {
+    transform-origin: center;
+  }
+
+  .menu .line3-container {
+    transform-origin: center;
+  }
+
+  /** is opening */
+
+  .menu.is-open .line1 {
+    transform: translateY(4px);
+  }
+
+  .menu.is-open .line1-container  {
+    transform: rotate(45deg) scaleX(0.8) translateY(4px);
+  }
+
+  .menu.is-open .line2 {
+    transform: scale(0.1);
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .menu.is-open .line3 {
+    transform: translateY(-4px);
+  }
+
+  .menu.is-open .line3-container {
+    transform: rotate(-45deg) scaleX(0.8) translateY(-5px);
+  }
+
+
+  /** is closing */
+  .menu.is-close .line2 {
+    transition-delay: var(--transitionSpeed);
+  }
+
+  .menu.is-close .line1-container, .menu.is-close .line3-container {
+    transition-delay: 0s;
   }
 
   .header-menu-button {
@@ -47,10 +115,9 @@
     font-size: 32px;
     margin: 0;
     letter-spacing: -1px;
-    text-align: center;
     width: 100%;
     display: block;
-    margin: 10px;
+    margin: 10px 6px;
     color: var(--blackAlpha90);
   }
 
@@ -102,7 +169,7 @@
   }
 
   @media screen and (--Desktop) {
-    .header-menu-button {
+    .menu {
       display: none;
     }
 

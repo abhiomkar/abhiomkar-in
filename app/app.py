@@ -12,6 +12,10 @@ from flask import jsonify
 from google.appengine.api import mail
 
 import settings
+import sys
+
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 app = Flask(__name__, template_folder="./")
 
