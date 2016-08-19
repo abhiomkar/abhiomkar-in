@@ -23,28 +23,30 @@
                 <a class="twitter-link social-link" href="https://twitter.com/abhiomkar"></a>
               </div>
             </div>
-            <div class="thank-you">
-              Thanks for your message! I'll respond to you as soon as I can.
-            </div>
           </div>
         </div>
         <div class="progress-bar"></div>
         <form class="contact-form" id="contact-form" action="/contact/sendemail" method="post">
           <div class="form-row form-row-subject">
             <label for="contact-subject">Subject</label>
-            <input tabindex="0" type="text" name="contact-subject" id="contact-subject" class="contact-subject" placeholder="Just saying hello" />
+            <input tabindex="0" type="text" name="contact-subject" id="contact-subject" class="contact-subject" placeholder="Enter subject here" />
           </div>
           <div class="form-row form-row-from">
             <label for="contact-from">From</label>
             <input type="text" name="contact-sender-email" id="contact-sender-email" class="contact-from" placeholder="elon@spacex.com" />
           </div>
           <div class="form-body-row">
-            <textarea name="contact-body" id="contact-body" class="contact-form-body" placeholder="(Optional) Type something here..."></textarea>
+            <label for="contact-body">Message</label>
+              <textarea name="contact-body" id="contact-body" class="contact-form-body" placeholder="Enter your message here"></textarea>
             <button id="contact-send-button" class="flat-colored-button form-submit-button"><i class="material-icons send-icon">send</i> Send</button>
           </div>
         </form>
       </div>
+
+      <div class="thank-you">
+        Thanks for your message! <br/> I'll respond to you as soon as I can.
+      </div>
     </div>
-    <div class="status-bar">Couldn't send. Please try again later.</div>
+    <div class="status-bar"></div>
   </div>
 {% endblock %}

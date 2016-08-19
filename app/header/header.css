@@ -1,18 +1,19 @@
 @import "../common/shadow.css";
 @import "../common/color.css";
 @import "../common/media.css";
+@import "../common/variable.css";
 
 .main-header {
   background: #fff;
   position: relative;
   color: var(--blackAlpha90);
-  height: 85px;
+  height: var(--headerHeight);
 
   .header-bar {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 8px 0;
+    padding: 22px 0 8px 0;
     max-width: 576px;
     margin: 0 auto;
     height: 100%;
@@ -72,7 +73,7 @@
   .vertical-nav {
     position: absolute;
     width: 100%;
-    top: 85px;
+    top: var(--headerHeight);
     background: #fff;
     border-top: 1px solid #f1f1f1;
     box-shadow: var(--elevation_2dp);

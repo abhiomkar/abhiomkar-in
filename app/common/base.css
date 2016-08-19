@@ -288,19 +288,30 @@ textarea {
   font-weight: bold;
   font-size: 13px;
   border-radius: 2px;
-  box-shadow: none;
   height: 32px;
   display: flex;
   justify-content: center;
   align-items: center;
   min-width: 84px;
   outline: 0;
-  transition: all 0.15 ease-in-out;
+  transition: all 0.35 ease-in-out;
   cursor: pointer;
+  box-shadow: var(--elevation_1dp);
+}
+
+.flat-colored-button[disabled] {
+  background: #F5F5F5;
+  color: #9E9E9E;
+  box-shadow: none;
+}
+
+.flat-colored-button:focus {
+  background: #3367D6;
 }
 
 .flat-colored-button:active {
-  box-shadow: var(--elevation_1dp);
+  box-shadow: var(--elevation_6dp);
+  background: #3367D6;
 }
 
 .flat-colored-button.disabled {

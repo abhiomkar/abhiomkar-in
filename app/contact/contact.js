@@ -11,54 +11,71 @@ class Contact {
 
     this.$form = this.$el.querySelector('#contact-form');
     this.$sendButton = this.$el.querySelector('#contact-send-button');
+    this.$statusBar = this.$el.querySelector('.status-bar');
 
     this.addEventListeners();
+    this.isSending = false;
   }
 
   addEventListeners () {
-    this.$sendButton.addEventListener('click', (e) => this.sendEmail(e));
+    this.$sendButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (this.isSending) { return; }
+
+      this.isSending = true;
+      setTimeout(() => this.sendEmail(e), 600);
+    });
   }
 
   sendEmail (e) {
-    e.preventDefault();
-
     const promise = fetch('/contact/sendmail', {
       method: 'POST',
       body: new FormData(this.$form),
     });
 
+    const ERROR_MSG = "Couldn't send. Please try again later.";
+
     promise.then(response => {
       if (response.status === 200) {
         // clear form
         this.$form.reset();
-        this.showThankYou();
+        this.showToast("Mail sent.");
+        this.showThankYouMsg();
       } else {
-        this.showError();
+        this.showErrorToast(ERROR_MSG);
       }
-    }).catch(() => this.showError());
+
+      this.isSending = false;
+    }).catch(() => {
+      this.showErrorToast(ERROR_MSG)
+      this.isSending = false;
+    });
   }
 
-  showThankYou () {
-    const $aboutSection = this.$el.querySelector('.about-section');
+  showErrorToast (msg) {
+    this.$statusBar.innerHTML = msg;
+    this.$statusBar.classList.add('has-error');
+    this.$statusBar.classList.add('is-visible');
+    this.hideToast();
+  }
+
+  showToast (msg) {
+    this.$statusBar.innerHTML = msg;
+    this.$statusBar.classList.remove('has-error');
+    this.$statusBar.classList.add('is-visible');
+    this.hideToast();
+  }
+
+  hideToast() {
+   setTimeout(() => {
+      this.$statusBar.classList.remove('is-visible');
+    }, 8000);
+  }
+
+  showThankYouMsg () {
     const $thankYou = this.$el.querySelector('.thank-you');
-    const toggleVisible = () => {
-      $aboutSection.classList.toggle('is-visible');
-      $thankYou.classList.toggle('is-visible');
-    }
-
-    toggleVisible();
-    setTimeout(() => {
-      toggleVisible();
-    }, 8000);
-  }
-
-  showError () {
-    const $statusBar = this.$el.querySelector('.status-bar');
-
-    $statusBar.classList.add('is-visible');
-    setTimeout(() => {
-      $statusBar.classList.remove('is-visible');
-    }, 8000);
+    $thankYou.classList.add('is-visible');
+    setTimeout(() => $thankYou.classList.remove('is-visible'), 12000);
   }
 }
 

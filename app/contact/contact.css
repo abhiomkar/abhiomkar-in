@@ -1,6 +1,7 @@
 @import "../common/color.css";
 @import "../common/variable.css";
 @import "../common/shadow.css";
+@import "../common/media.css";
 
 .contact-container {
   height: 100%;
@@ -92,7 +93,7 @@
     align-items: center;
 
     label {
-      width: 60px;
+      width: 65px;
     }
 
     input {
@@ -109,7 +110,7 @@
     align-items: center;
 
     label {
-      width: 60px;
+      width: 65px;
     }
 
     input {
@@ -120,6 +121,11 @@
 
   .form-body-row {
     position: relative;
+    padding-top: 14px;
+
+    label {
+      margin: 14px;
+    }
   }
 
   .contact-form {
@@ -154,19 +160,24 @@
     left: 0;
     right: 0;
     display: inline-block;
-    background: #F44336;
+    background: #323232;
     margin: 0 auto;
     text-align: center;
     color: #FFF;
-    padding: 15px;
-    width: 280px;
+    padding: 16px 22px;
     border-radius: 3px 3px 0 0;
     font-size: 14px;
+    box-sizing: border-box;
+    width: 100%;
 
     &.is-visible {
       visibility: visible;
       transform: none;
     }
+  }
+
+  .status-bar.has-error {
+    background: #C53929;
   }
 
   .slide-container {
@@ -189,17 +200,24 @@
   .thank-you {
     transition: all 0.5s ease-out;
     visibility: hidden;
-    transform: translate(44px, -60px);
     opacity: 0;
-    width: 260px;
+    max-width: 260px;
     margin: 0 auto;
     color: var(--blackAlpha84);
     font-size: 13px;
+    margin-top: 20px;
+    font-weight: 500;
+    text-align: center;
 
     &.is-visible {
       visibility: visible;
       opacity: 1;
-      transform: translate(0, -60px);
+    }
+  }
+
+  @media screen and (min-width: 480px) {
+    .status-bar {
+      max-width: 312px;
     }
   }
 }
