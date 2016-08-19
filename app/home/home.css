@@ -4,6 +4,10 @@
   height: 100%;
   padding: 0 0 15px 0;
 
+  .cover-pic-container {
+    min-height: 160px;
+  }
+
   .cover-pic {
     width: 100%;
     display: block;

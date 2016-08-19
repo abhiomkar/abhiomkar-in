@@ -61,7 +61,6 @@ class Contact {
 
   showToast (msg) {
     this.$statusBar.innerHTML = msg;
-    this.$statusBar.classList.remove('has-error');
     this.$statusBar.classList.add('is-visible');
     this.hideToast();
   }
@@ -69,6 +68,7 @@ class Contact {
   hideToast() {
    setTimeout(() => {
       this.$statusBar.classList.remove('is-visible');
+      this.$statusBar.classList.remove('has-error');
     }, 8000);
   }
 

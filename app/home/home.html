@@ -2,8 +2,10 @@
 {% block title %}{{ super() }}Home{% endblock %}
 {% block content %}
     <div class="{{ name }}-container">
-      <img class="cover-pic" alt="Abhinay's Studio"
-           data-src="https://s3-ap-northeast-1.amazonaws.com/abhiomkar.in-files/workspace.png" />
+      <div class="cover-pic-container">
+        <img class="cover-pic" alt="Abhinay's Studio"
+             data-src="https://s3-ap-northeast-1.amazonaws.com/abhiomkar.in-files/workspace.png" />
+      </div>
       <div class="content">
         {{ content }}
       </div>
