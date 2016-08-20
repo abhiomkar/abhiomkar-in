@@ -1,12 +1,45 @@
-I'm **Abhinay Omkar**, a photographer, hacker, artist,
-travel enthusiast located in Bangalore, India. I've
-passion towards programming and I want to build
-something which'll make this world simpler. I write
-Open Source Code, I like solving problems.
+About
+=====
 
-I currently work at Google as UX Engineer for
-Google Apps for Work.
+Hello! My name is **Abhinay Omkar**. I born in Andhra Pradesh, India and currently based in Bangalore, India. I studied Computer Science of Engineering at my beautiful college _Koneru Lakshmaiah College of Engineering_, Vijayawada, India.
 
-If you want to get in touch please drop me an
-email or go to my [/contact](/contact) page. You can follow
-me on [Twitter](https://twitter.com/abhiomkar).
+Work
+----
+
+I’m currently working at Google (Bangalore, India) as UX Engineer. Previously at Akamai Technologies & HCL Technologies. More details at [Linkedin](https://www.linkedin.com/in/abhiomkar).
+
+Code
+----
+
+I believe writing good code is as important as a good design. My strengths are Javascript & Python. See my hacks at [Github](https://github.com/abhiomkar).
+
+Photography
+-----------
+
+I’m a self-taught photographer specialized in Creative Candid Moments, Weddings, Portraits, Travel & Nature. I started my own venture as a part-time freelancer in creative candid wedding photography 4 years ago. I shot weddings of various traditions all over india including simple and big fat weddings.
+
+See some of my best work at [/photography](/photography).
+
+*I’m currently **not available** for any hire.*
+
+Books
+-----
+
+I love to read books. Here are few of my favorite books.
+
+- [The Design of Everyday Things](https://www.goodreads.com/book/show/840.The_Design_of_Everyday_Things) by **Donald A. Norman**
+- [Effective Programming: More Than Writing Code](https://www.goodreads.com/book/show/15746409-effective-programming) by **Jeff Atwood**
+- [Steve Jobs](https://www.goodreads.com/book/show/11084145-steve-jobs) by **Walter Isaacson** 
+- [Elon Musk: Inventing the Future](https://www.goodreads.com/book/show/22543496-elon-musk) by **Ashlee Vance**
+- [Zero to One: Notes on Startups, or How to Build the Future](https://www.goodreads.com/book/show/18050143-zero-to-one) by **Peter Thiel**
+- [The Fault in Our Stars](https://www.goodreads.com/book/show/11870085-the-fault-in-our-stars) by **John Green**
+- [JavaScript: The Good Parts](https://www.goodreads.com/book/show/2998152-javascript) by **Douglas Crockford**
+- [Show Your Work!](https://www.goodreads.com/book/show/18290401-show-your-work) by **Austin Kleon**
+- [Be Here Now](https://www.goodreads.com/book/show/29254.Be_Here_Now) by **Ram Dass, Richard Alpert**
+- [Scion of Ikshavaku](https://www.goodreads.com/book/show/24709327-scion-of-ikshvaku) by **Amish Tripathi**
+- [My Gita](https://www.goodreads.com/book/show/27318490-my-gita) by **Devdutt Pattanaik**
+
+Website
+-------
+
+Website was designed in Sketch & built with Vanilla Javascript, Flask, Webpack, Gulp, Markdown hosted on Google App Engine.

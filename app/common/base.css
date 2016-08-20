@@ -33,7 +33,17 @@ body.is-dark {
 }
 
 h1 {
- margin: 22px 8px;
+ font-size: 24px;
+ margin: 22px 0 18px 0;
+ font-weight: 300;
+ color: rgba(0, 0, 0, 0.9);
+}
+
+h2 {
+  font-size: 18px;
+  margin: 28px 0 10px 0;
+  font-weight: 500;
+ color: rgba(0, 0, 0, 0.8);
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -46,11 +56,6 @@ blockquote, q {
 
 blockquote:before, blockquote:after, q:before, q:after {
   content: none;
-}
-
-li {
-  list-style-type: none;
-  display: inline-block;
 }
 
 table {
@@ -87,7 +92,6 @@ table {
 
 /* Typography */
 /*Accent color*/
-a,
 #title,
 #post-list a:hover,
 #post-list li:hover .dates,
@@ -95,6 +99,10 @@ a,
   text-decoration: none;
   color: #5badf0;
   color: #5694f1;
+}
+
+a {
+  color: #3367D6;
 }
 
 p a {
@@ -110,18 +118,22 @@ p {
   transition: all 0.15s ease-in-out;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
+li {
+  line-height: 1.5;
+  list-style: none;
 }
 
-li {
-  list-style-type: circle;
-  list-style-position: inside;
+li:before {
+  content: "·";
+  font-size: 45px;
+  vertical-align: middle;
+  line-height: 20px;
+  padding-right: 8px;
 }
 
 b, strong {
   font-weight: 500;
+  color: rgba(0, 0, 0, 0.9);
 }
 
 em, i {

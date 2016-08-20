@@ -13,6 +13,10 @@
   color: var(--blackAlpha90);
   height: var(--headerHeight);
 
+  a {
+    text-decoration: none;
+  }
+
   .header-bar {
     display: flex;
     justify-content: flex-start;

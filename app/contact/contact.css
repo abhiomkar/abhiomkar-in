@@ -35,6 +35,10 @@
   .contact-card {
     max-width: 480px;
     margin: 35px auto 0;
+
+    a {
+      text-decoration: none;
+    }
   }
 
   .profile-container {
