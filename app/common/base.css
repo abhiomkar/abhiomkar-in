@@ -308,6 +308,7 @@ textarea {
   transition: all 0.35 ease-in-out;
   cursor: pointer;
   box-shadow: var(--elevation_1dp);
+  text-align: center;
 }
 
 .flat-colored-button[disabled] {
