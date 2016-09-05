@@ -76,5 +76,10 @@
     "webpack-stream": "^2.0.0",
     "whatwg-fetch": "^1.0.0",
     "yargs": "^3.9.0"
+  },
+  "devDependencies": {
+    "css-loader": "^0.12.1",
+    "postcss-cssnext": "^2.8.0",
+    "postcss-import": "^7.1.3"
   }
 }

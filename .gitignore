@@ -6,4 +6,5 @@ node_modules
 public/dist/*
 server/dist/*
 app/static/*
+app/build/*
 lib/*

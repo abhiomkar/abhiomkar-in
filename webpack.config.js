@@ -1,13 +1,10 @@
 var webpack = require('webpack');
 
+var precss = require('precss');
 var autoprefixer = require('autoprefixer');
-var browserslist = require('browserslist');
-var postcss = require('postcss');
-var cssnext = require('cssnext');
-var cssnano = require('cssnano');
-var nestedcss = require('postcss-nested');
 var cssimport = require('postcss-import');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var cssnested = require('postcss-nested');
+var cssnext = require('postcss-cssnext');
 
 var path = require('path');
 var fs = require('fs');
@@ -44,34 +41,23 @@ Module.frontend = {
        // inline base64 URLs for <=12k images, direct URLs for the rest otherwise serve as file
        { test: /\.(jpg|jpeg|png|gif|svg)$/, loaders: ['url-loader?limit=12288'] },
        { test: /\.(eot|woff2|woff|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?(\?iefix)?(#webfont)?$/, loaders: ['file'] },
-       { test: /\.css$/, loader: ExtractTextPlugin.extract('css-loader!postcss-loader') }
+       { test: /\.css$/, loader: "style-loader!css-loader!postcss-loader" }
     ]
   },
-  postcss: [cssimport(), autoprefixer({browsers: browserslist.defaults}), cssnext(), nestedcss()],
+  postcss: function () {
+    return [cssimport, cssnested, cssnext, precss];
+  },
   plugins: [
-    new ExtractTextPlugin("[name].css"),
-    new webpack.ProvidePlugin({
-      // $: 'jquery',
-      // jQuery: 'jquery',
-      // "window.jQuery": "jquery",
-      // "root.jQuery": "jquery"
-    })
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false
+        }
+    }),
   ],
   node: {
     console: true
-  }
+  },
 };
-
-if (env === 'production') {
-  function minifyJS() {
-    return new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    })
-  }
-
-  Module.frontend.plugins.push(minifyJS());
-}
 
 module.exports = Module;

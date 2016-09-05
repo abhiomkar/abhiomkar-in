@@ -27,11 +27,11 @@ var serverRoot = 'server';
 
 // map of all our paths
 var paths = {
-  src: ['app/**/*.{css,js,html}', '!app/static/**'],
+  src: ['app/**/*.{css,js,html}', '!app/build/**'],
   images: 'app/images/**/*.*', // image files
 
   entry: 'app/main.js',
-  output: 'app/static/'
+  output: 'app/build/'
 };
 
 // use our webpack.config.js to
@@ -60,12 +60,12 @@ gulp.task('watch:frontend', function(){
 
 gulp.task('clean', function(){
   return del([
-    'pubic/**/*'
+    'app/build/**/*'
   ]);
 });
 
 gulp.task('watch', function(done){
-  sync('watch:frontend', done);
+  sync('watch:frontend', 'browser-sync', done);
 });
 
 gulp.task('build', function(done) {
@@ -73,5 +73,5 @@ gulp.task('build', function(done) {
 });
 
 gulp.task('default', function(done){
-  sync('clean', 'webpack:frontend', 'watch', 'browser-sync', done);
+  sync('watch', done);
 });
