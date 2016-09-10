@@ -33,11 +33,11 @@ Development
 
         dev_appserver.py app.yaml --port 5000
 
- - Run Gulp Watch
+ - Run Webpack in watch mode
        
-       gulp
+       webpack --watch
 
- - Go to localhost:3000
+ - Go to localhost:3003
 
  - Hack! Hack!
   
