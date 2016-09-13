@@ -3,23 +3,23 @@
 .home-container {
   height: 100%;
   padding: 0 0 15px 0;
+}
 
-  .cover-pic {
-    width: 100%;
-    display: block;
-    max-width: var(--contentWidth);
-    margin: 0 auto 35px;
-  }
+.home-cover-pic {
+  width: 100%;
+  display: block;
+  max-width: var(--contentWidth);
+  margin: 0 auto 35px;
+}
 
-  .content {
-    padding: 0 12px;
-    max-width: var(--contentWidth);
-    margin: 0 auto;
-    font-size: 16px;
-    line-height: 26px;
+.home-content {
+  padding: 0 12px;
+  max-width: var(--contentWidth);
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 26px;
 
-    strong {
-      color: rgba(0, 0, 0, 0.8);
-    }
+  strong {
+    color: rgba(0, 0, 0, 0.8);
   }
 }
