@@ -46,6 +46,6 @@ Deploy
 
  - Build and deploy to production
 
-        ./build.sh
+        webpack && gcloud app deploy
 
  - You should see result at abhiomkar-in.appsot.com
