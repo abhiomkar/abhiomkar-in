@@ -7,19 +7,16 @@ import './about/about.js';
 import './contact/contact.js';
 
 class Main {
-  constructor () {
-    this.lazyLoadImages();
-  }
+  constructor() { this.lazyLoadImages(); }
 
-  lazyLoadImages () {
-    Array.from(document.querySelectorAll('img[data-src]')).forEach((img) => {
-      if (!img.hasAttribute('lazy')) {
-        img.setAttribute('src', img.getAttribute('data-src'));
-        img.onload = function() {
-          img.removeAttribute('data-src');
-        };
-      }
-    });
+  lazyLoadImages() {
+    Array.from(document.querySelectorAll('img[data-src]'))
+        .forEach((img) => {
+          if (!img.hasAttribute('lazy')) {
+            img.setAttribute('src', img.getAttribute('data-src'));
+            img.onload = function() { img.removeAttribute('data-src'); };
+          }
+        });
   }
 }
 
