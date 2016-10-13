@@ -28,6 +28,10 @@ Development
 
         pip init
         pip install
+
+ - Install javascript deps
+        
+        npm install
  
  - Run app locally
 
